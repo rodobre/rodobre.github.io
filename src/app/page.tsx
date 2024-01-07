@@ -6,7 +6,7 @@ import { Avatar, NextUIProvider } from '@nextui-org/react'
 export default function Home() {
   return (
     <NextUIProvider>
-      <main className="flex-auto">
+      <main className="flex-auto min-h-screen">
         <div className="sm:px-8 mt-9">
           <div className="mx-auto w-full max-w-7xl lg:px-8">
             <div className="relative px-4 sm:px-8 lg:px-12">
