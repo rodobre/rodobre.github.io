@@ -16,7 +16,7 @@ function Project({ project }: { project: Project }) {
     typeof project.start === 'string' ? project.start : project.start.dateTime
 
   return (
-    <li className="flex gap-4">
+    <div className="flex gap-4">
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={project.logo} alt="" className="h-7 w-7" unoptimized />
       </div>
@@ -32,7 +32,7 @@ function Project({ project }: { project: Project }) {
           <time dateTime={startDate}>{startLabel}</time>{' '}
         </dd>
       </dl>
-    </li>
+    </div>
   )
 }
 

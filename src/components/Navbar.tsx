@@ -12,7 +12,6 @@ import { useEffect, useState } from 'react'
 
 export const LayoutNavbar = () => {
   const [prefersDarkMode, setPrefersDarkMode] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const getPrefersDarkMode = () =>
     window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -29,7 +28,7 @@ export const LayoutNavbar = () => {
   }, [prefersDarkMode])
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar>
       <NavbarBrand />
       <NavbarContent className="flex gap-4" justify="center">
         <NavbarItem isActive>
@@ -58,7 +57,9 @@ export const LayoutNavbar = () => {
             onClick={() =>
               setPrefersDarkMode((previousState) => !previousState)
             }
+            aria-label="Toggle dark mode"
           >
+            <p className="sr-only">Toggle dark mode</p>
             {prefersDarkMode ? <DarkIcon /> : <LightIcon />}
           </Button>
         </NavbarItem>

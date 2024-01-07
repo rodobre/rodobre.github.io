@@ -20,7 +20,7 @@ export function Section<T extends SectionItem>(props: SectionProps<T>) {
       {props.header}
       <ol className="mt-6 space-y-4">
         {props.items.map((item: T, itemIndex) => (
-          <div key={itemIndex}>{props.renderItem(item, itemIndex)}</div>
+          <li key={itemIndex}>{props.renderItem(item, itemIndex)}</li>
         ))}
       </ol>
       {props.footer}
