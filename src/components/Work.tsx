@@ -3,7 +3,7 @@ import logoCertiK from '@/images/logos/certik.jpeg'
 import logoSFS from '@/images/logos/sfstandard.png'
 import logoKPMG from '@/images/logos/kpmg.jpeg'
 import logoToptal from '@/images/logos/toptal.png'
-import logoPhase from '@/images/logos/phase.jpeg'
+import logoPhase from '@/images/logos/phase.png'
 import logoBitdefender from '@/images/logos/bitdefender.png'
 import { Button } from '@nextui-org/react'
 
@@ -106,7 +106,7 @@ export const Work = () => {
       },
     },
     {
-      company: 'Phase Services',
+      company: 'Phase',
       title: 'Founder & Full-Stack Engineer',
       logo: logoPhase,
       start: '2020',
