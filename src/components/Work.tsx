@@ -124,7 +124,7 @@ export const Work = () => {
     },
     {
       company: 'Bitdefender',
-      title: 'C++ Software Engineer (Core Security Team)',
+      title: 'C++ Software Engineer',
       logo: logoBitdefender,
       start: '2018',
       end: '2019',
