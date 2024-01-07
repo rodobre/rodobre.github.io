@@ -9,10 +9,10 @@ import {
 } from '@nextui-org/react'
 import { DarkIcon, LightIcon } from './DarkModeIcons'
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
 
 export const LayoutNavbar = () => {
   const [prefersDarkMode, setPrefersDarkMode] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const getPrefersDarkMode = () =>
     window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -29,9 +29,9 @@ export const LayoutNavbar = () => {
   }, [prefersDarkMode])
 
   return (
-    <Navbar>
-      <NavbarBrand></NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+    <Navbar onMenuOpenChange={setIsMenuOpen}>
+      <NavbarBrand />
+      <NavbarContent className="flex gap-4" justify="center">
         <NavbarItem isActive>
           <Link href="#" aria-current="page">
             About
