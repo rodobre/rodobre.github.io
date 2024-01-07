@@ -1,4 +1,4 @@
-import Image, { type ImageProps } from 'next/image'
+import Image from 'next/image'
 import logoCertiK from '@/images/logos/certik.jpeg'
 import logoSFS from '@/images/logos/sfstandard.png'
 import logoKPMG from '@/images/logos/kpmg.jpeg'
@@ -6,6 +6,7 @@ import logoToptal from '@/images/logos/toptal.png'
 import logoPhase from '@/images/logos/phase.png'
 import logoBitdefender from '@/images/logos/bitdefender.png'
 import { Button } from '@nextui-org/react'
+import { Section, SectionItem } from './Section'
 
 function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -30,12 +31,8 @@ function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-interface Role {
+interface Role extends SectionItem {
   company: string
-  title: string
-  logo: ImageProps['src']
-  start: string | { label: string; dateTime: string }
-  end: string | { label: string; dateTime: string }
 }
 
 function Role({ role }: { role: Role }) {
@@ -131,21 +128,28 @@ export const Work = () => {
     },
   ]
 
+  const header = (
+    <h2 className="flex text-sm font-semibold ">
+      <BriefcaseIcon className="h-6 w-6 flex-none" />
+      <span className="ml-3">Work</span>
+    </h2>
+  )
+
+  const footer = (
+    <Button href="#" color="primary" className="group mt-6 w-full">
+      Download CV
+      {/* <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" /> */}
+    </Button>
+  )
+
+  const renderItem = (role: Role) => <Role role={role} />
+
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-      <h2 className="flex text-sm font-semibold ">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
-      </h2>
-      <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
-          <Role key={roleIndex} role={role} />
-        ))}
-      </ol>
-      <Button href="#" color="primary" className="group mt-6 w-full">
-        Download CV
-        {/* <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" /> */}
-      </Button>
-    </div>
+    <Section
+      header={header}
+      footer={footer}
+      items={resume}
+      renderItem={renderItem}
+    />
   )
 }

@@ -9,6 +9,7 @@ import {
 } from '@nextui-org/react'
 import { DarkIcon, LightIcon } from './DarkModeIcons'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 export const LayoutNavbar = () => {
   const [prefersDarkMode, setPrefersDarkMode] = useState(false)
@@ -37,13 +38,15 @@ export const LayoutNavbar = () => {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Projects
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Speaking
+          <Link
+            href={`https://twitter.com/messages/compose?recipient_id=1532393087259009025&text=${encodeURIComponent(
+              'What’s the best thing about Switzerland? I don’t know, but the flag is a big plus.'
+            )}`}
+            color="foreground"
+            isExternal
+            showAnchorIcon
+          >
+            Let&apos;s chat!
           </Link>
         </NavbarItem>
       </NavbarContent>

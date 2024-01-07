@@ -1,4 +1,6 @@
 'use client'
+import { Achievements } from '@/components/Achievements'
+import { Projects } from '@/components/Projects'
 import { Socials } from '@/components/Socials'
 import { Work } from '@/components/Work'
 import { Avatar, NextUIProvider } from '@nextui-org/react'
@@ -29,7 +31,13 @@ export default function Home() {
                     projects, ranging from real estate to collaborative editing.
                   </p>
                   <Socials />
-                  <Work />
+                </div>
+                <div className="flex flex-col gap-6">
+                  <div className="flex flex-col md:flex-row gap-6 pt-6">
+                    <Work />
+                    <Achievements />
+                  </div>
+                  <Projects />
                 </div>
               </div>
             </div>
