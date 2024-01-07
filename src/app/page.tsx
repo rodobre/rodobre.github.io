@@ -6,7 +6,7 @@ import { Avatar, NextUIProvider } from '@nextui-org/react'
 export default function Home() {
   return (
     <NextUIProvider>
-      <main className="flex-auto min-h-screen">
+      <main className="flex-auto min-h-screen bg-background">
         <div className="sm:px-8 mt-9">
           <div className="mx-auto w-full max-w-7xl lg:px-8">
             <div className="relative px-4 sm:px-8 lg:px-12">
@@ -17,14 +17,16 @@ export default function Home() {
                     size="lg"
                   />
                   <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-                    Software designer, founder, and amateur astronaut.
+                    Software engineer, security researcher and aspiring
+                    early-stage founder.
                   </h1>
                   <p className="text-base">
                     I’m Robert, a passionate software engineer and security
                     researcher based in Bucharest. Founding engineer for several
                     US companies, published research on Web3 security, avid
                     bug-bounty hunter, developed multiple open-source attack
-                    surface mapping tools.
+                    surface mapping tools. Working on numerous personal
+                    projects, ranging from real estate to collaborative editing.
                   </p>
                   <Socials />
                   <Work />
