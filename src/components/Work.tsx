@@ -2,6 +2,7 @@ import Image, { type ImageProps } from 'next/image'
 import logoCertiK from '@/images/logos/certik.jpeg'
 import logoSFS from '@/images/logos/sfstandard.png'
 import logoKPMG from '@/images/logos/kpmg.jpeg'
+import logoToptal from '@/images/logos/toptal.png'
 import logoPhase from '@/images/logos/phase.jpeg'
 import logoBitdefender from '@/images/logos/bitdefender.png'
 import { Button } from '@nextui-org/react'
@@ -89,6 +90,16 @@ export const Work = () => {
       title: 'Founding Full-Stack Engineer',
       logo: logoSFS,
       start: '2022',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
+      company: 'Toptal',
+      title: 'Full-Stack Engineer',
+      logo: logoToptal,
+      start: '2021',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
