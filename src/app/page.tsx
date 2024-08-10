@@ -3,7 +3,7 @@ import { Achievements } from '@/components/Achievements'
 import { Projects } from '@/components/Projects'
 import { Socials } from '@/components/Socials'
 import { Work } from '@/components/Work'
-import { Avatar, NextUIProvider } from '@nextui-org/react'
+import { NextUIProvider } from '@nextui-org/react'
 
 export default function Home() {
   return (
@@ -14,9 +14,11 @@ export default function Home() {
             <div className="relative px-4 sm:px-8 lg:px-12">
               <div className="mx-auto max-w-2xl lg:max-w-5xl">
                 <div className="max-w-2xl flex flex-col gap-6">
-                  <Avatar
-                    src="https://media.licdn.com/dms/image/D4D03AQE0vpcP8dVaxg/profile-displayphoto-shrink_400_400/0/1690742921814?e=1710374400&v=beta&t=NZOui0bl9Nnb5kfpFTsE-9knBmOjgyGO62Ve0cAqY3k"
-                    size="lg"
+                  <img
+                    src="/images/robert.jpeg"
+                    className="aspect-[1.33333] w-64 rounded-2xl"
+                    alt="Portrait of Robert in Tromsø, Norway with a beautiful Aurora Borealis in the background"
+                    loading="lazy"
                   />
                   <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
                     Software engineer, security researcher and aspiring

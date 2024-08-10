@@ -7,6 +7,7 @@ import logoStradal from '@/images/logos/stradal.jpeg'
 interface Project extends SectionItem {
   company: string
   titleComponent: React.ReactNode
+  url: string
 }
 
 function Project({ project }: { project: Project }) {
@@ -16,7 +17,12 @@ function Project({ project }: { project: Project }) {
     typeof project.start === 'string' ? project.start : project.start.dateTime
 
   return (
-    <div className="flex gap-4">
+    <a
+      href={project.url}
+      className="flex gap-4"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={project.logo} alt="" className="h-7 w-7" unoptimized />
       </div>
@@ -32,7 +38,7 @@ function Project({ project }: { project: Project }) {
           <time dateTime={startDate}>{startLabel}</time>{' '}
         </dd>
       </dl>
-    </div>
+    </a>
   )
 }
 
@@ -48,6 +54,20 @@ export const Projects = () => {
 
   let projects: Array<Project> = [
     {
+      company: 'zexpress',
+      title: '',
+      titleComponent: (
+        <dd className="text-xs max-w-[90%]">
+          A minimal Express.js wrapper with rich TypeScript support, advanced
+          logging, chainable middlewares and filesystem routing
+        </dd>
+      ),
+      logo: logoGithub,
+      start: '2024',
+      end: '',
+      url: 'https://github.com/rodobre/zexpress',
+    },
+    {
       company: 'DNS Detective',
       title: '',
       titleComponent: (
@@ -59,6 +79,7 @@ export const Projects = () => {
       logo: logoGithub,
       start: '2024',
       end: '',
+      url: 'https://github.com/rodobre/dns-detective',
     },
     {
       company: 'Enumerator',
@@ -72,20 +93,7 @@ export const Projects = () => {
       logo: logoGithub,
       start: '2023',
       end: '',
-    },
-    {
-      company: 'Stradal - Coming soon!',
-      title: '',
-      titleComponent: (
-        <dd className="text-xs max-w-[90%]">
-          A real-estate platform for finding the best listings, optimizing
-          commute times for cus- tomers, and providing value in the form of
-          relevant metrics
-        </dd>
-      ),
-      logo: logoStradal,
-      start: '2021',
-      end: '',
+      url: 'https://github.com/rodobre/enumerator',
     },
     {
       company: 'Interfuzz',
@@ -94,12 +102,13 @@ export const Projects = () => {
         <dd className="text-xs max-w-[90%]">
           A network fuzzer written for Linux which floods an endpoint with
           malformed packets so as to detect vulnerabilities in network packet
-          handling. Uses: C, C++, Linux Syscalls.
+          handling.
         </dd>
       ),
       logo: logoGithub,
       start: '2019',
       end: '',
+      url: 'https://github.com/rodobre/interfuzz',
     },
   ]
 

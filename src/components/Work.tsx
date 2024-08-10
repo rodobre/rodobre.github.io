@@ -73,16 +73,6 @@ function Role({ role }: { role: Role }) {
 export const Work = () => {
   let resume: Array<Role> = [
     {
-      company: 'CertiK',
-      title: 'Security Researcher',
-      logo: logoCertiK,
-      start: '2023',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear().toString(),
-      },
-    },
-    {
       company: 'San Francisco Standard',
       title: 'Founding Full-Stack Engineer',
       logo: logoSFS,
@@ -106,25 +96,35 @@ export const Work = () => {
       company: 'Phase',
       title: 'Founder & Full-Stack Engineer',
       logo: logoPhase,
-      start: '2020',
+      start: 'Jan. 2020',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
+      company: 'CertiK',
+      title: 'Security Engineer',
+      logo: logoCertiK,
+      start: 'Jun. 2023',
+      end: {
+        label: 'Aug. 2024',
+        dateTime: '2024',
+      },
+    },
+    {
       company: 'KPMG',
       title: 'Cyber Security Consultant',
       logo: logoKPMG,
-      start: '2019',
-      end: '2020',
+      start: 'Sep. 2019',
+      end: 'Dec. 2020',
     },
     {
       company: 'Bitdefender',
       title: 'C++ Software Engineer',
       logo: logoBitdefender,
-      start: '2018',
-      end: '2019',
+      start: 'Nov. 2018',
+      end: 'Feb. 2019',
     },
   ]
 

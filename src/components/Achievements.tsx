@@ -5,7 +5,7 @@ import logoECSC from '@/images/logos/ecsc.png'
 import logoDCTF from '@/images/logos/defcon.png'
 import logoH8 from '@/images/logos/h8.png'
 import logoCSAW from '@/images/logos/csaw.jpeg'
-import logoBH from '@/images/logos/bh_asia.png'
+import logoPhase from '@/images/logos/phase.png'
 
 interface Achievement extends SectionItem {
   company: string
@@ -55,16 +55,22 @@ export const Achievements = () => {
 
   let achievements: Array<Achievement> = [
     {
-      company: 'Black Hat Asia 2024',
+      company: 'National Cyber Team Sponsor',
       title: '',
       titleComponent: (
         <dd className="text-xs">
-          Research on Web3 security with CertiK
-          <br />
-          Speaker & Researcher
+          Official sponsor of the{' '}
+          <a
+            href="https://www.rocsc.ro/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Romanian Cyber Security Challenge 2024
+          </a>
         </dd>
       ),
-      logo: logoBH,
+      logo: logoPhase,
       start: '2024',
       end: '',
     },
