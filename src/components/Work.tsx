@@ -1,11 +1,4 @@
 import Image from 'next/image'
-import logoCertiK from '@/images/logos/certik.jpeg'
-import logoSFS from '@/images/logos/sfstandard.png'
-import logoKPMG from '@/images/logos/kpmg.jpeg'
-import logoToptal from '@/images/logos/toptal.png'
-import logoPhase from '@/images/logos/phase.png'
-import logoBitdefender from '@/images/logos/bitdefender.png'
-import { Button } from '@nextui-org/react'
 import { Section, SectionItem } from './Section'
 
 function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -47,7 +40,15 @@ function Role({ role }: { role: Role }) {
   return (
     <div className="flex gap-4">
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+        <Image
+          src={role.logo}
+          alt="Logo of a company where Robert has worked"
+          className="h-7 w-7 rounded-full"
+          width={30}
+          height={30}
+          unoptimized
+          loading="lazy"
+        />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
@@ -75,7 +76,7 @@ export const Work = () => {
     {
       company: 'San Francisco Standard',
       title: 'Founding Full-Stack Engineer',
-      logo: logoSFS,
+      logo: '/images/logos/sfstandard.webp',
       start: '2022',
       end: {
         label: 'Present',
@@ -85,7 +86,7 @@ export const Work = () => {
     {
       company: 'Toptal',
       title: 'Full-Stack Engineer',
-      logo: logoToptal,
+      logo: '/images/logos/toptal.webp',
       start: '2021',
       end: {
         label: 'Present',
@@ -95,7 +96,7 @@ export const Work = () => {
     {
       company: 'Phase',
       title: 'Founder & Full-Stack Engineer',
-      logo: logoPhase,
+      logo: '/images/logos/phase.webp',
       start: 'Jan. 2020',
       end: {
         label: 'Present',
@@ -105,7 +106,7 @@ export const Work = () => {
     {
       company: 'CertiK',
       title: 'Security Engineer',
-      logo: logoCertiK,
+      logo: '/images/logos/certik.webp',
       start: 'Jun. 2023',
       end: {
         label: 'Aug. 2024',
@@ -115,14 +116,14 @@ export const Work = () => {
     {
       company: 'KPMG',
       title: 'Cyber Security Consultant',
-      logo: logoKPMG,
+      logo: '/images/logos/kpmg.webp',
       start: 'Sep. 2019',
       end: 'Dec. 2020',
     },
     {
       company: 'Bitdefender',
       title: 'C++ Software Engineer',
-      logo: logoBitdefender,
+      logo: '/images/logos/bitdefender.webp',
       start: 'Nov. 2018',
       end: 'Feb. 2019',
     },

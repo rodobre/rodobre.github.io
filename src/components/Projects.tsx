@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import { Section, SectionItem } from './Section'
 import { BeakerIcon } from '@heroicons/react/24/outline'
-import logoGithub from '@/images/logos/github.png'
-import logoStradal from '@/images/logos/stradal.jpeg'
 
 interface Project extends SectionItem {
   company: string
@@ -24,7 +22,15 @@ function Project({ project }: { project: Project }) {
       rel="noopener noreferrer"
     >
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={project.logo} alt="" className="h-7 w-7" unoptimized />
+        <Image
+          src={project.logo}
+          alt="A project which Robert has worked on in the past"
+          className="h-7 w-7 rounded-full"
+          width={30}
+          height={30}
+          unoptimized
+          loading="lazy"
+        />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Project Name</dt>
@@ -62,7 +68,7 @@ export const Projects = () => {
           logging, chainable middlewares and filesystem routing
         </dd>
       ),
-      logo: logoGithub,
+      logo: '/images/logos/github.webp',
       start: '2024',
       end: '',
       url: 'https://github.com/rodobre/zexpress',
@@ -76,7 +82,7 @@ export const Projects = () => {
           subdomain lookup services like SecurityTrails and tools like OneForAll
         </dd>
       ),
-      logo: logoGithub,
+      logo: '/images/logos/github.webp',
       start: '2024',
       end: '',
       url: 'https://github.com/rodobre/dns-detective',
@@ -90,7 +96,7 @@ export const Projects = () => {
           customization and proxying
         </dd>
       ),
-      logo: logoGithub,
+      logo: '/images/logos/github.webp',
       start: '2023',
       end: '',
       url: 'https://github.com/rodobre/enumerator',
@@ -105,7 +111,7 @@ export const Projects = () => {
           handling.
         </dd>
       ),
-      logo: logoGithub,
+      logo: '/images/logos/github.webp',
       start: '2019',
       end: '',
       url: 'https://github.com/rodobre/interfuzz',
